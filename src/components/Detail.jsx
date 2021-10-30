@@ -6,17 +6,26 @@ import axios from 'axios';
 
 function Detail(props) {
   const [isFetching, setIsFetching] = useState(false)
-  const [callDetails, setCallDetails] = useState([])
-  const [isArchived, setIsArchived] = useState(false)
+  const [callDetails, setCallDetails] = useState({})
 
   const date = new Date(callDetails.created_at).toLocaleString('en-us',{month:'long', year:'numeric', day:'numeric'})
-
-  const handleArchiveClick = (e) => {
-    e.preventDefault()
-    axios.post('https://aircall-job.herokuapp.com/activities/' +props.id, {is_archived: true})
+  
+  const handleArchiveClick = (e, action) => {
+    const copyObj = Object.assign({}, callDetails)
+    
+    if (action === 'archive'){
+      axios.post('https://aircall-job.herokuapp.com/activities/' +props.id, {is_archived: true})
       .then(res => {
-        setIsArchived(true)
+        copyObj.is_archived = true
+        setCallDetails(copyObj)
       })
+    } else {
+      axios.post('https://aircall-job.herokuapp.com/activities/' +props.id, {is_archived: false})
+      .then(res => {
+        copyObj.is_archived = false
+        setCallDetails(copyObj)
+      })
+    }   
   }
 
   //API call
@@ -50,7 +59,9 @@ function Detail(props) {
               <span>{callDetails.call_type} {callDetails.direction} call that lasted {callDetails.duration} seconds</span>
             </div>
             <div className="button">
-              {isArchived ? <button className='archived'>Archived</button> :  <button className='primary' onClick={handleArchiveClick}>Archive</button>}
+              {callDetails.is_archived 
+              ?  <button className='archived' onClick={e => handleArchiveClick(e, 'unarchive')}>Unarchive</button> 
+              :  <button className='unarchived' onClick={e => handleArchiveClick(e, 'archive')}>Archive</button>}
             </div>
           </div>
         </div>}

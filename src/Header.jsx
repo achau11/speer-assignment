@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
+
   return (
     <header>
     <svg width='486px' height='168px' viewBox='0 0 486 168' version='1.1' xmlns='http://www.w3.org/2000/svg'>
@@ -20,9 +21,10 @@ const Header = () => {
     </svg>
 
     <div className="nav">
-      <h2>Inbox</h2>
-      <h2>Archived</h2>
-    </div>
+      <h2 onClick={e => props.handleTabClick(e, 'calls')}>Calls</h2>
+      <h2 onClick={e => props.handleTabClick(e, 'archived')}>Archived</h2>
+    </div>  
+    
   </header>
   );
 };

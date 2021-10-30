@@ -83,11 +83,14 @@ button {
   border: 2px solid gray;
 }
 
-.archived {
+.archived:hover {
   background-color: green;
+  cursor: pointer;
+  color: white;
+  border: 2px solid green;
 }
 
-.primary:hover {
+.unarchived:hover {
   color: white;
   background-color: red;
   border: 2px solid red;

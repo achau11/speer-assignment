@@ -22,9 +22,31 @@ const App = () => {
     setView('calls')
   }
 
+  const handleTabClick = (e, view) => {
+    e.preventDefault()
+    setView(view)
+  }
+
+
   //Map through all of the calls in the API
   const calls = state.map(call => {
-    
+    if (view === 'archived') {
+      return (call.is_archived && <Activity 
+        key={call.id}
+        id={call.id}
+        created_at={call.created_at}
+        direction={call.direction}
+        from={call.from}
+        to={call.to}
+        via={call.via}
+        duration={call.duration}
+        is_archived={call.is_archived}
+        call_type={call.call_type}
+        datesArray={datesArray}
+        handleCallClick={handleCallClick}
+      />)
+    }
+
     return (!call.is_archived && <Activity 
       key={call.id}
       id={call.id}
@@ -49,8 +71,8 @@ const App = () => {
 
   return (
     <div className='container'>
-      <Header/>
-      {view === 'calls' ? 
+      <Header handleTabClick={handleTabClick}/>
+      {view === 'calls' || view === 'archived' ? 
         <div className="container-view">{calls}</div>
         :
         <div className="card-view">
