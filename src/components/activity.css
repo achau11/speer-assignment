@@ -1,0 +1,89 @@
+.activity {
+  padding: 10px 0;
+}
+.call {
+  display: flex;
+  border-radius: 10px;
+  border: 2px solid rgb(228, 228, 228);
+  padding: 20px;
+  padding-right: 0px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.date {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed rgb(206, 206, 206);
+  line-height: 0.1em;
+  color: rgb(175, 175, 175);
+  font-weight: 700;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.date span {
+  background: rgb(243, 243, 243);
+  padding: 0 10px;
+}
+
+.left {
+  display: flex;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.num {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.text {
+  margin-top: 5px;
+  color: gray;
+  font-size: 12px;
+}
+
+.icon {
+  font-size: 25px;
+  color: green;
+}
+
+.icon_missed {
+  font-size: 25px;
+  color: red;
+}
+
+.right {
+  font-size: 11px;
+  font-weight: 700;
+  color: gray;
+}
+
+.abbr_PM {
+  margin-left: 5px;
+  padding: 5px 3px;
+  border: 1px solid rgb(228, 228, 228);
+  border-right: none;
+  color: rgba(141, 6, 6, 0.7);
+}
+
+.abbr_AM {
+  margin-left: 5px;
+  padding: 5px 3px;
+  border: 1px solid rgb(228, 228, 228);
+  border-right: none;
+  color: rgb(3, 143, 3, 0.7);
+}
+
+code {
+  visibility: hidden;
+}

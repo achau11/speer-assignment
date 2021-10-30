@@ -1,0 +1,115 @@
+.detail {
+  height: 540px;
+}
+
+.back {
+  font-size: 40px;
+  margin-top: 20px;
+  color: gray;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+}
+
+.back:hover {
+  color: black;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  background-color: white;
+  box-shadow: 0 3px 0 rgba(151, 151, 151, 0.1);
+  border-radius: 5px;
+  margin-top: 30px;
+  overflow-x: hidden;
+}
+
+.avatar {
+  align-self: center;
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.desc_details {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.desc_details span {
+  margin-top: 5px;
+}
+
+.to {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.call_details {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  font-size: 14px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  
+  border: 2px solid gray;
+}
+
+.archived {
+  background-color: green;
+}
+
+.primary:hover {
+  color: white;
+  background-color: red;
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  border-top-color: black;
+  animation: spinner .6s linear infinite;
+}

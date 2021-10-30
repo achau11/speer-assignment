@@ -13,13 +13,24 @@
   width: 376px;
   height: 666px;
   z-index: 100;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 
-  background: white;
+  background: rgb(243, 243, 243);
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
 }
 
-#app .container-view {
-  padding: 20px;
+#app .container::-webkit-scrollbar {
+  display: none;
 }
 
+#app .container-view {
+  height: 666px;
+  padding: 0 20px;
+}
+
+#app .card-view {
+  padding: 0 20px;
+}
